@@ -11,12 +11,14 @@ class PersonalDataSeeder extends Seeder
     public function run(): void
     {
         $faker = Faker::create();
+        $userIds = DB::table('users')->pluck('id')->toArray();
 
-        foreach (range(1, 10) as $i) {
-            DB::table('personal_data')->insert([
+        foreach ($userIds as $userId) {
+            DB::table('personal_datas')->insert([
                 'adress' => $faker->address(),
                 'phone_number' => $faker->phoneNumber(),
                 'email' => $faker->unique()->safeEmail(),
+                'personal_id' => $userId,
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);

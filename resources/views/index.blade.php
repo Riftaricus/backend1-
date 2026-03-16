@@ -38,23 +38,23 @@
     <header class="sticky top-0 z-40 bg-stone-950/90 backdrop-blur border-b border-stone-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <nav class="flex items-center justify-between h-16">
-                <a href="index.html"
+                <a href="/"
                     class="font-serif text-2xl text-amber-400 tracking-wide hover:text-amber-300 transition">Thai
                     Basil</a>
                 <ul class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide">
-                    <li><a href="index.html" class="text-amber-400 border-b border-amber-400 pb-0.5">Home</a></li>
-                    <li><a href="menu.html" class="text-stone-300 hover:text-amber-400 transition">Menu</a></li>
-                    <li><a href="contact.html" class="text-stone-300 hover:text-amber-400 transition">Contact</a></li>
-                    <li><a href="reservations.html"
-                            class="text-stone-300 hover:text-amber-400 transition">Reservations</a></li>
+                    <li><a href="/" class="text-amber-400 border-b border-amber-400 pb-0.5">Home</a></li>
+                    <li><a href="/menu" class="text-stone-300 hover:text-amber-400 transition">Menu</a></li>
+                    <li><a href="/contact" class="text-stone-300 hover:text-amber-400 transition">Contact</a></li>
+                    <li><a href="/reservations" class="text-stone-300 hover:text-amber-400 transition">Reservations</a>
+                    </li>
                     <li><a href="/login"
-                            class="px-4 py-1.5 border border-amber-700 text-amber-400 rounded hover:bg-amber-700 hover:text-white transition text-xs uppercase tracking-widest">Admin</a>
+                            class="px-4 py-1.5 border border-amber-700 text-amber-400 rounded hover:bg-amber-700 hover:text-white transition text-xs uppercase tracking-widest">Login</a>
                     </li>
                 </ul>
                 <!-- Mobile nav -->
                 <nav class="md:hidden flex gap-4 text-sm">
-                    <a href="menu.html" class="text-stone-400 hover:text-amber-400 transition">Menu</a>
-                    <a href="reservations.html" class="text-stone-400 hover:text-amber-400 transition">Reserve</a>
+                    <a href="/menu" class="text-stone-400 hover:text-amber-400 transition">Menu</a>
+                    <a href="/reservations" class="text-stone-400 hover:text-amber-400 transition">Reserve</a>
                 </nav>
             </nav>
         </div>
@@ -72,11 +72,11 @@
                 Experience the soulful flavours of Thailand — crafted with tradition, served with heart.
             </p>
             <div class="flex flex-wrap gap-4 justify-center">
-                <a href="menu.html"
+                <a href="/menu"
                     class="px-8 py-3 bg-amber-700 hover:bg-amber-600 text-white font-semibold rounded-full transition shadow-lg">
                     View Menu
                 </a>
-                <a href="reservations.html"
+                <a href="/reservations"
                     class="px-8 py-3 border border-stone-400 text-stone-100 hover:border-amber-400 hover:text-amber-400 rounded-full transition">
                     Reserve a Table
                 </a>
@@ -161,7 +161,7 @@
 
         </div>
         <div class="text-center mt-10">
-            <a href="menu.html"
+            <a href="/menu"
                 class="px-8 py-3 border border-amber-700 text-amber-400 hover:bg-amber-700 hover:text-white rounded-full transition text-sm">
                 See Full Menu →
             </a>

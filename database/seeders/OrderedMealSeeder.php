@@ -13,6 +13,10 @@ class OrderedMealSeeder extends Seeder
         $mealIds = DB::table('meals')->pluck('id')->toArray();
         $statuses = ['Pending', 'Preparing', 'Delivered', 'Cancelled'];
 
+        if ($userIds === [] || $mealIds === []) {
+            return;
+        }
+
         foreach (range(1, 20) as $i) {
             DB::table('ordered_meals')->insert([
                 'meal_id' => $mealIds[array_rand($mealIds)],

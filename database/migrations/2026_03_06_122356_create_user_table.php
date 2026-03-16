@@ -29,10 +29,22 @@ return new class extends Migration {
             $table->timestamps();
         });
 
-        Schema::create('reviews', function (Blueprint $table) {
+        Schema::create('messages', function (Blueprint $table) {
             $table->id();
-            $table->integer("rating");
             $table->foreignId("user_id")->references("id")->on("users");
+            $table->integer('phone_number');
+            $table->text('message');
+            $table->timestamps();
+        });
+
+        Schema::create('reservations', function (Blueprint $table){
+            $table->id();
+            $table->foreignId("user_id")->references("id")->on("users");
+            $table->integer('phone_number');
+            $table->integer('guests');
+            $table->date('date');
+            $table->time('time');
+            $table->text('special_requests');
             $table->timestamps();
         });
 
@@ -59,7 +71,8 @@ return new class extends Migration {
     {
         Schema::dropIfExists('users');
         Schema::dropIfExists('personal_data');
-        Schema::dropIfExists('reviews');
+        Schema::dropIfExists('messages');
+        Schema::dropIfExists('reservations');
         Schema::dropIfExists('sessions');
         Schema::dropIfExists('password_reset_tokens');
     }
