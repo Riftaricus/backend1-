@@ -15,6 +15,7 @@ return new class extends Migration {
             $table->string("name");
             $table->double("price");
             $table->text("description");
+            $table->boolean("featured")->default(false);
             $table->timestamps();
         });
         Schema::create('ordered_meals', function (Blueprint $table) {

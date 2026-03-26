@@ -91,73 +91,24 @@
             <h2 class="font-serif text-4xl text-amber-100">Featured Dishes</h2>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            @php
+                $meals = DB::table('meals')->select('id', 'name', 'price', 'description')->get();
+            @endphp
 
-            <div
-                class="group bg-stone-900 rounded-2xl overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-300">
-                <div class="relative overflow-hidden h-48">
-                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=400" alt="Spring Rolls"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                    <span class="absolute top-3 right-3 bg-green-700 text-white text-xs px-2 py-0.5 rounded-full">🌿
-                        Veg</span>
-                </div>
-                <div class="p-5">
-                    <h3 class="text-amber-100 font-semibold text-lg mb-1">Spring Rolls</h3>
-                    <p class="text-stone-400 text-sm mb-3 leading-relaxed">Crispy golden rolls filled with vegetables
-                        and glass noodles, served with sweet chili sauce.</p>
-                    <p class="text-amber-500 font-bold text-xl">$8.99</p>
-                </div>
-            </div>
-
-            <div
-                class="group bg-stone-900 rounded-2xl overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-300">
-                <div class="relative overflow-hidden h-48">
-                    <img src="https://images.unsplash.com/photo-1559314809-0d155014e29e?w=400" alt="Pad Thai"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                    <span class="absolute top-3 right-3 bg-red-700 text-white text-xs px-2 py-0.5 rounded-full">🌶
-                        Spicy</span>
-                </div>
-                <div class="p-5">
-                    <h3 class="text-amber-100 font-semibold text-lg mb-1">Pad Thai</h3>
-                    <p class="text-stone-400 text-sm mb-3 leading-relaxed">Stir-fried rice noodles with shrimp, tofu,
-                        bean sprouts, and crushed peanuts in tamarind sauce.</p>
-                    <p class="text-amber-500 font-bold text-xl">$16.99</p>
-                </div>
-            </div>
-
-            <div
-                class="group bg-stone-900 rounded-2xl overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-300">
-                <div class="relative overflow-hidden h-48">
-                    <img src="https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=400" alt="Green Curry"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                    <div class="absolute top-3 right-3 flex gap-1">
-                        <span class="bg-red-700 text-white text-xs px-2 py-0.5 rounded-full">🌶 Spicy</span>
-                        <span class="bg-green-700 text-white text-xs px-2 py-0.5 rounded-full">🌿 Veg</span>
+            @foreach ($meals as $meal)
+                <div
+                    class="group bg-stone-900 rounded-2xl overflow-hidden shadow-md hover:-translate-y-1 transition-all duration-300">
+                    <div class="relative overflow-hidden h-44">
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-start justify-between gap-2 mb-2">
+                            <h3 class="text-amber-100 font-semibold">{{ $meal->name }}</h3>
+                            <span class="text-amber-500 font-bold shrink-0">${{ number_format($meal->price, 2) }}</span>
+                        </div>
+                        <p class="text-stone-400 text-sm leading-relaxed">{{ $meal->description }}</p>
                     </div>
                 </div>
-                <div class="p-5">
-                    <h3 class="text-amber-100 font-semibold text-lg mb-1">Green Curry</h3>
-                    <p class="text-stone-400 text-sm mb-3 leading-relaxed">Rich coconut milk curry with fresh green
-                        chilies, eggplant, and Thai basil.</p>
-                    <p class="text-amber-500 font-bold text-xl">$18.99</p>
-                </div>
-            </div>
-
-            <div
-                class="group bg-stone-900 rounded-2xl overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-300">
-                <div class="relative overflow-hidden h-48">
-                    <img src="https://images.unsplash.com/photo-1519984388953-d2406bc725e1?w=400"
-                        alt="Mango Sticky Rice"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                    <span class="absolute top-3 right-3 bg-green-700 text-white text-xs px-2 py-0.5 rounded-full">🌿
-                        Veg</span>
-                </div>
-                <div class="p-5">
-                    <h3 class="text-amber-100 font-semibold text-lg mb-1">Mango Sticky Rice</h3>
-                    <p class="text-stone-400 text-sm mb-3 leading-relaxed">Sweet glutinous rice served with fresh mango
-                        slices and coconut cream.</p>
-                    <p class="text-amber-500 font-bold text-xl">$9.99</p>
-                </div>
-            </div>
+            @endforeach
 
         </div>
         <div class="text-center mt-10">

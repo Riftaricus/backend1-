@@ -36,8 +36,8 @@
                 <ul class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide">
                     <li><a href="/" class="text-stone-300 hover:text-amber-400 transition">Home</a></li>
                     <li><a href="/menu" class="text-stone-300 hover:text-amber-400 transition">Menu</a></li>
-                    <li><a href="/reservations" class="text-stone-300 hover:text-amber-400 transition">Contact</a>
-                    <li><a href="/contact" class="text-amber-400 border-b border-amber-400 pb-0.5">Reservations</a></li>
+                    <li><a href="/contact" class="text-stone-300 hover:text-amber-400 transition">Contact</a>
+                    <li><a href="/reservations" class="text-amber-400 border-b border-amber-400 pb-0.5">Reservations</a></li>
                     </li>
                     <li><a href="/login"
                             class="px-4 py-1.5 border border-amber-700 text-amber-400 rounded hover:bg-amber-700 hover:text-white transition text-xs uppercase tracking-widest">Login</a>
