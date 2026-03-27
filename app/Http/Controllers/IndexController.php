@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Meals;
 use Illuminate\Http\Request;
+use App\Models\Meals;
 
-class MealController extends Controller
+class IndexController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,7 @@ class MealController extends Controller
     public function index()
     {
         $menus = Meals::all();
-        return view("menu", compact('menus'));
+        return view("index", compact('menus'));
     }
 
     /**

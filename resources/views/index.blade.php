@@ -91,23 +91,22 @@
             <h2 class="font-serif text-4xl text-amber-100">Featured Dishes</h2>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            @php
-                $meals = DB::table('meals')->select('id', 'name', 'price', 'description')->get();
-            @endphp
 
-            @foreach ($meals as $meal)
-                <div
-                    class="group bg-stone-900 rounded-2xl overflow-hidden shadow-md hover:-translate-y-1 transition-all duration-300">
-                    <div class="relative overflow-hidden h-44">
-                    </div>
-                    <div class="p-5">
-                        <div class="flex items-start justify-between gap-2 mb-2">
-                            <h3 class="text-amber-100 font-semibold">{{ $meal->name }}</h3>
-                            <span class="text-amber-500 font-bold shrink-0">${{ number_format($meal->price, 2) }}</span>
+            @foreach ($menus as $meal)
+                @if($meal->featured == true)
+                    <div
+                        class="group bg-stone-900 rounded-2xl overflow-hidden shadow-md hover:-translate-y-1 transition-all duration-300">
+                        <div class="relative overflow-hidden h-44">
                         </div>
-                        <p class="text-stone-400 text-sm leading-relaxed">{{ $meal->description }}</p>
+                        <div class="p-5">
+                            <div class="flex items-start justify-between gap-2 mb-2">
+                                <h3 class="text-amber-100 font-semibold">{{ $meal->name }}</h3>
+                                <span class="text-amber-500 font-bold shrink-0">${{ number_format($meal->price, 2) }}</span>
+                            </div>
+                            <p class="text-stone-400 text-sm leading-relaxed">{{ $meal->description }}</p>
+                        </div>
                     </div>
-                </div>
+                @endif
             @endforeach
 
         </div>

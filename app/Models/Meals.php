@@ -9,6 +9,7 @@ class Meals extends Model
     protected $fillable = [
         'name',
         'description',
-        'price'
+        'price',
+        'featured'
     ];
 }
