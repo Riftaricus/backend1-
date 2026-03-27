@@ -12,19 +12,25 @@
                 <!-- Email Address -->
                 <div>
                     <x-input-label for="email" :value="__('Email')" class="text-amber-300" />
-                    <x-text-input id="email" class="block mt-1 w-full bg-stone-800 border-stone-700 text-stone-100 focus:ring-amber-400 focus:border-amber-400" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
+                    <x-text-input id="email"
+                        class="block mt-1 w-full bg-stone-800 border-stone-700 text-stone-100 focus:ring-amber-400 focus:border-amber-400"
+                        type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
                     <x-input-error :messages="$errors->get('email')" class="mt-2" />
                 </div>
                 <!-- Password -->
                 <div>
                     <x-input-label for="password" :value="__('Password')" class="text-amber-300" />
-                    <x-text-input id="password" class="block mt-1 w-full bg-stone-800 border-stone-700 text-stone-100 focus:ring-amber-400 focus:border-amber-400" type="password" name="password" required autocomplete="current-password" />
+                    <x-text-input id="password"
+                        class="block mt-1 w-full bg-stone-800 border-stone-700 text-stone-100 focus:ring-amber-400 focus:border-amber-400"
+                        type="password" name="password" required autocomplete="current-password" />
                     <x-input-error :messages="$errors->get('password')" class="mt-2" />
                 </div>
                 <!-- Remember Me -->
                 <div class="flex items-center justify-between">
                     <label for="remember_me" class="inline-flex items-center">
-                        <input id="remember_me" type="checkbox" class="rounded border-stone-600 text-amber-400 shadow-sm focus:ring-amber-400" name="remember">
+                        <input id="remember_me" type="checkbox"
+                            class="rounded border-stone-600 text-amber-400 shadow-sm focus:ring-amber-400"
+                            name="remember">
                         <span class="ms-2 text-sm text-stone-300">{{ __('Remember me') }}</span>
                     </label>
                     @if (Route::has('password.request'))
@@ -34,10 +40,13 @@
                     @endif
                 </div>
                 <div>
-                    <x-primary-button class="w-full bg-amber-400 hover:bg-amber-500 text-stone-900 font-bold py-2 rounded-lg transition">{{ __('Log in') }}</x-primary-button>
+                    <x-primary-button
+                        class="w-full bg-amber-400 hover:bg-amber-500 text-stone-900 font-bold py-2 rounded-lg transition">{{ __('Log in') }}</x-primary-button>
                 </div>
                 <div class="text-center mt-4">
-                    <a href="{{ route('register') }}" class="text-sm text-stone-400 hover:text-amber-400 transition">Don't have an account? Register</a>
+                    <a href="{{ route('register') }}"
+                        class="text-sm text-stone-400 hover:text-amber-400 transition">Don't have an account?
+                        Register</a>
                 </div>
             </form>
         </div>
